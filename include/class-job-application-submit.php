@@ -375,7 +375,7 @@ class JobApplicationSubmit
                         
                         default:
                             // Secure Location
-                            self::relocate_file( $attachment_id, $new_post_id, $key, $entry_data );
+                            self::relocate_file( $key, $entry_data, $attachment_id, $new_post_id );
                             break;
                     }
 
@@ -482,7 +482,7 @@ class JobApplicationSubmit
                             
                             default:
                                 // Secure Location
-                                self::relocate_file( $attachment_id, $new_post_id, $key, $entry_data );
+                                self::relocate_file( $key, $entry_data, $attachment_id, $new_post_id);
                                 break;
                         }
                     }
@@ -560,7 +560,7 @@ class JobApplicationSubmit
         return $string;
     }
 
-    public static function relocate_file( $attachment_id = 0, $entry_id = 0, $key, $entry_data ){
+    public static function relocate_file( $key, $entry_data, $attachment_id = 0, $entry_id = 0  ){
         if( !$attachment_id || !$entry_id ) return false;
 
         // Secure file directory

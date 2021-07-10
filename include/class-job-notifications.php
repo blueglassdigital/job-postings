@@ -135,7 +135,7 @@ class JobNotifications
 
 
 
-				$send = wp_mail( $to, $subject, $body_html, self::getHeaders( $name, $contact_email, $job_id ), $attachments );
+				$send = wp_mail( $to, $subject, $body_html, self::getHeaders( $contact_email, $job_id, $name ), $attachments );
 
 				$return = $send;
 				//print_r( $body_html);
@@ -150,7 +150,7 @@ class JobNotifications
 	}
 
 
-	public static function getHeaders( $name = 'Applicant', $contact_email, $job_id ){
+	public static function getHeaders( $contact_email, $job_id, $name = 'Applicant' ){
 		$contact_email = explode(',', $contact_email);
 		$contact_email = $contact_email[0];
 

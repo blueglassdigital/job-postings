@@ -21,7 +21,7 @@ class JobSingleView
     }
 
 
-    public static function get_job_fields( $position = 'sort-left', $post_id ){
+    public static function get_job_fields( $post_id, $position = 'sort-left' ){
         if( !$post_id ) return;
 
         wp_enqueue_script('jquery');
@@ -961,14 +961,14 @@ function get_job_fields( $job_id = '' ){
 
         echo '<div class="'.$class_1.'">';
             echo '<div class="job-content-wrap">';
-                echo JobSingleView::get_job_fields( $sort_type_1, $job_id );
+                echo JobSingleView::get_job_fields( $job_id, $sort_type_1 );
             echo '</div>';
             do_action('job-postings/single/after_left');
         echo '</div>';
 
         echo '<div class="'.$class_2.'">';
             echo '<div class="job-content-wrap">';
-                echo JobSingleView::get_job_fields( $sort_type_2, $job_id );
+                echo JobSingleView::get_job_fields( $job_id, $sort_type_2 );
             echo '</div>';
             do_action('job-postings/single/after_right');
         echo '</div>';

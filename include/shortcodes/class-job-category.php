@@ -22,7 +22,7 @@ if( !class_exists('JobCategory') ){
             return self::do_job_categories( $aligncategory = 'left', $category = '', $hide_empty = true, $show_count, $multiselect );
         }
 
-        public static function do_job_categories( $aligncategory = 'left', $category = '', $hide_empty = true, $show_count, $multiselect = false ){
+        public static function do_job_categories( $aligncategory = 'left', $category = '', $hide_empty = true, $show_count = false, $multiselect = false ){
 
             $class = array();
 

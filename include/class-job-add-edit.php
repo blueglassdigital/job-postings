@@ -109,7 +109,7 @@ class JobAddEdit
         }
 
         echo '<div class="jobs-wrapper menu-instructions-inactive jobs-wrapper-disabled jobs-wrapper-sortable-disabled connectedSortable" data-sort="sort-disabled">';
-            self::renderFields( 'sort-disabled', Job_Postings::$fields, $post, $append_class_1, $append_class_2 );
+            self::renderFields( Job_Postings::$fields, $post, 'sort-disabled', $append_class_1, $append_class_2 );
         echo '</div>';
 	}
 	
@@ -174,10 +174,10 @@ class JobAddEdit
 					case 'job_form':
 						echo '<div id="job_form" class="job_tab_content clearfix '.$sort_type_2.'">';
 							echo '<div class="jobs-wrapper menu-instructions-inactive jobs_match_height '.$class_1.' connectedSortable" data-sort="'.$sort_type_1.'">';
-								self::renderFields( $sort_type_1, Job_Postings::$fields, $post, $append_class_1, $append_class_2 );
+								self::renderFields( Job_Postings::$fields, $post, $sort_type_1, $append_class_1, $append_class_2 );
 							echo '</div>';
 							echo '<div class="jobs-wrapper menu-instructions-inactive jobs_match_height '.$class_2.' connectedSortable" data-sort="'.$sort_type_2.'">';
-								self::renderFields( $sort_type_2, Job_Postings::$fields, $post, $append_class_1, $append_class_2 );
+								self::renderFields( Job_Postings::$fields, $post, $sort_type_2, $append_class_1, $append_class_2 );
 							echo '</div>';
 						echo '</div>';
 						echo '<div class="clearfix" style="clear:both"></div>';
@@ -271,7 +271,7 @@ class JobAddEdit
 
 
 
-    public static function renderFields( $position = 'sort-left', $fields, $post, $append_class_1 = '', $append_class_2 = ''  ){
+    public static function renderFields( $fields, $post, $position = 'sort-left', $append_class_1 = '', $append_class_2 = ''  ){
     	global $pagenow, $typenow;
 		$post_id 	= $post->ID;
 
